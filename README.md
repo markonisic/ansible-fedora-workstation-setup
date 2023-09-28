@@ -9,6 +9,7 @@ to speed up the process if the worst comes).
 
 TODO:
 
+~~- [x] Added task to change default shell~~
 - [ ] Add Flatpak packages
 - [ ] Add autoremove
 - [ ] Create roles for package installs
