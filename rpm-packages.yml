@@ -3,6 +3,8 @@
     ansible.builtin.dnf:
       name:
         - htop
+        - git
+        - curl
         - neovim
         - gnome-tweak-tool
         - zsh
