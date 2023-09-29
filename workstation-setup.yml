@@ -4,7 +4,7 @@
   become: true
 
   tasks:
-  - name: Upgrade all packages
+  - name: Upgrade all RPM packages
     dnf:
       name: "*"
       state: latest
@@ -17,14 +17,5 @@
       state: present
   
   - include: rpm-packages.yml
-
-  - name: Set default shell to ZSH
-    user:
-      name: markon
-      shell: /bin/zsh
-
-  - name: Install Oh My ZSH
-    shell: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
-
-  - name: Download Powerlevel10k theme
-    shell: 'git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k'
+  - include: flatpak-packages.yml
+  - include: zsh-setup.yml

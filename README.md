@@ -9,8 +9,11 @@ to speed up the process if the worst comes).
 
 TODO:
 
-~~- [x] Added task to change default shell~~
-- [ ] Add Flatpak packages
+~~- [x] Add task to change default shell~~
+
+~~- [x] Add Flatpak packages~~
+
+~~-[x] Add task to check and skip install if ZSH, OhMyZSH and Powerlevel10k installs exists~~
+
 - [ ] Add autoremove
-- [ ] Create roles for package installs
 - [ ] Create task to pull .dotfiles repo

@@ -1,10 +1,13 @@
 
   - name: Install packages
-    ansible.builtin.dnf:
+    dnf:
       name:
         - htop
         - git
         - curl
+        - gcc
+        - gcc-c++
+        - ripgrep
         - neovim
         - gnome-tweak-tool
         - zsh
