@@ -1,0 +1,10 @@
+- name: Update flatpak packages
+  shell: 'flatpak update --noninteractive'
+
+- name: Install flatpak packages
+  community.general.flatpak:
+    name:
+      - com.spotify.client
+      - md.obsidian.Obsidian
+      - com.stremio.Stremio
+      - com.bitwarden.desktop
