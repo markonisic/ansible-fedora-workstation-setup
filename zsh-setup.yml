@@ -1,0 +1,27 @@
+
+  - name: Set default shell to ZSH
+    user:
+      name: markon
+      shell: /bin/zsh
+
+  - name: Register Oh My Zsh status
+    stat:
+      path: /root/.oh-my-zsh
+    register: ohmyzsh_path
+
+  - name: Install Oh My ZSH
+    when: "not ohmyzsh_path.stat.exists"
+    block:
+        - name: Download and run Oh My ZSH install
+          shell: 'sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"'
+
+  - name: Register Powerlevel10k status
+    stat:
+      path: /root/.oh-my-zsh/custom/themes/powerlevel10k
+    register: pl10k_path
+  
+  - name: Download Powerlevel10k theme
+    when: "not pl10k_path.stat.exists"
+    block:
+      - name: Install theme
+        shell: 'git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k'
