@@ -4,7 +4,7 @@
 - name: Install flatpak packages
   community.general.flatpak:
     name:
-      - com.spotify.client
+      - com.spotify.Client
       - md.obsidian.Obsidian
       - com.stremio.Stremio
       - com.bitwarden.desktop

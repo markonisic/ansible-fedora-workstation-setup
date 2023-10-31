@@ -14,6 +14,7 @@
       name: 
         - 'https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-38.noarch.rpm'
         - 'https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-38.noarch.rpm'
+      disable_gpg_check: true
       state: present
   
   - include: rpm-packages.yml
